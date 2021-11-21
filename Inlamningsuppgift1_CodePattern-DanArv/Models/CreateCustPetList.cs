@@ -13,7 +13,7 @@ namespace Inlamningsuppgift1_CodePattern_DanArv.Models
         {
             List<ICustomer> customers = new List<ICustomer>
             {
-                new Customer { Name = "Tobias", PhoneNumber = "0706498321"},
+                new Customer { Name = "Steven", PhoneNumber = "0706498321"},
                 new Customer {Name = "Daniel", PhoneNumber = "0727218651"}
             };
             return customers;
