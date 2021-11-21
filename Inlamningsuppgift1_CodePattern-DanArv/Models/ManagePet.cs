@@ -53,7 +53,7 @@ namespace Inlamningsuppgift1_CodePattern_DanArv.Models
         {
             foreach (var _pet in pets)
             {
-                Console.WriteLine($"Name: {_pet.Name}, Owner: {_pet.Owner.Name}, Owner: {_pet.Owner.PhoneNumber}, Atkennel: {_pet.inKennel}");
+                Console.WriteLine($"Name: {_pet.Name}, Atkennel: {_pet.inKennel}");
             }
         }
     }
