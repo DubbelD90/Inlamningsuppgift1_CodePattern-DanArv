@@ -9,7 +9,7 @@ namespace Inlamningsuppgift1_CodePattern_DanArv
 {
     public interface IManagePet
     {
-        IPet CreatePet( List<ICustomer> owners);
+        IPet CreatePet(List<ICustomer> owners);
         void SeeAllPets(List<IPet> pets);
     }
 }

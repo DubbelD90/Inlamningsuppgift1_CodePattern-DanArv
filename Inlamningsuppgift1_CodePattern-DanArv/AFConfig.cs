@@ -19,14 +19,15 @@ namespace Inlamningsuppgift1_CodePattern_DanArv
             builder.RegisterType<Application>().As<IApplication>();
             builder.RegisterType<CostOfServices>().As<ICostOfServices>();
             builder.RegisterType<CreateCustPetList>().As<ICreateCustPetList>();
-            builder.RegisterType<Customer>().As<ICustomer>();
+            builder.RegisterType<Customer>();
             builder.RegisterType<GetPrice>().As<IGetPrice>();
             builder.RegisterType<KennelMannagement>().As<IKennelManagement>();
             builder.RegisterType<KennelServices>().As<IKennelServices>();
             builder.RegisterType<MainMenu>().As<IMainMenu>();
             builder.RegisterType<ManageCustomer>().As<IManageCustomer>();
             builder.RegisterType<ManagePet>().As<IManagePet>();
-            builder.RegisterType<Pet>().As<IPet>();
+            builder.RegisterType<Pet>();
+
 
             return builder.Build();
         }

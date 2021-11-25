@@ -20,7 +20,7 @@ namespace Inlamningsuppgift1_CodePattern_DanArv.Models
 
         public void SeePetsInKennel(List<IPet> pets)
         {
-            IEnumerable<IPet> query = pets.Where(pet => pet.inKennel == true);
+            IEnumerable<IPet> query = pets.Where(pet => pet.InKennel == true);
             Console.WriteLine($"{query.Count()} animals in the kennel at the moment");
             foreach(IPet pet in query)
             {
@@ -36,7 +36,7 @@ namespace Inlamningsuppgift1_CodePattern_DanArv.Models
                 IPet pet = pets.FirstOrDefault(name => name.Name == inputPetName);
                 if(pet != null)
                 {
-                    pet.inKennel = true;
+                    pet.InKennel = true;
 
                     _kennelServices.ClawTrimPet((Pet)pet);
                     _kennelServices.WashPet((Pet)pet);
@@ -59,7 +59,7 @@ namespace Inlamningsuppgift1_CodePattern_DanArv.Models
                 IPet pet = pets.FirstOrDefault(name => name.Name == inputPetName);
                 if(pet != null)
                 {
-                    pet.inKennel = false;
+                    pet.InKennel = false;
 
                     _getPrice.TotalPrice((Pet)pet);
 

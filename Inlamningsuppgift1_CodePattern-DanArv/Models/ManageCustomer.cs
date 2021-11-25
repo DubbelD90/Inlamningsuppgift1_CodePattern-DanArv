@@ -10,11 +10,11 @@ namespace Inlamningsuppgift1_CodePattern_DanArv.Models
     public class ManageCustomer : IManageCustomer
     {
 
-        private readonly ICustomer _customer;
+        private readonly Customer.Factory _customerFactory;
 
-        public ManageCustomer(ICustomer customer)
+        public ManageCustomer(Customer.Factory customerFactory)
         {
-            _customer = customer;
+            _customerFactory = customerFactory;
         }
 
         public ICustomer CreateCustomer()
@@ -23,14 +23,14 @@ namespace Inlamningsuppgift1_CodePattern_DanArv.Models
             while (programIsRunning)
             {
                 Console.WriteLine("Enter name:");
-                _customer.Name = Console.ReadLine();
+                string customerName = Console.ReadLine();
                 Console.WriteLine("Enter phonenumber:");
-                _customer.PhoneNumber = Console.ReadLine();
+                string customerPhone = Console.ReadLine();
 
-                if(!String.IsNullOrWhiteSpace(_customer.Name) || !String.IsNullOrWhiteSpace(_customer.PhoneNumber))
+                if(!String.IsNullOrWhiteSpace(customerName) || !String.IsNullOrWhiteSpace(customerPhone))
                 {
                     programIsRunning = false;
-                    return _customer;
+                    return _customerFactory(customerName, customerPhone);
                 }
                 else
                 {

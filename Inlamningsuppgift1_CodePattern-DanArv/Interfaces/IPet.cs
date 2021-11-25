@@ -10,7 +10,7 @@ namespace Inlamningsuppgift1_CodePattern_DanArv.Interfaces
     {
         string Name { get; set; }
         ICustomer Owner { get; set; }
-        bool inKennel { get; set; }
+        bool InKennel { get; set; }
 
     }
 }

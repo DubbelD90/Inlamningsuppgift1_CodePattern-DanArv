@@ -15,7 +15,7 @@ namespace Inlamningsuppgift1_CodePattern_DanArv.Models
             string userInput = Console.ReadLine();
             if(userInput == "y")
             {
-                pet.needsClawTrim = true;
+                pet.NeedsClawTrim = true;
                 Console.WriteLine("Claw trim added");
             }
             else
@@ -30,7 +30,7 @@ namespace Inlamningsuppgift1_CodePattern_DanArv.Models
             string userInput = Console.ReadLine();
             if (userInput == "y")
             {
-                pet.needsWash = true;
+                pet.NeedsWash = true;
                 Console.WriteLine("Wash added");
             }
             else

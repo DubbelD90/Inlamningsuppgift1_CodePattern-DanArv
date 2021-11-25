@@ -12,12 +12,12 @@ namespace Inlamningsuppgift1_CodePattern_DanArv.Models
         public void TotalPrice(Pet pet)
         {
             int totalPrice = CostOfServices.PriceForStay;
-            if (pet.needsClawTrim)
+            if (pet.NeedsClawTrim)
             {
                 totalPrice += CostOfServices.PriceForTrim;
                 Console.WriteLine($"Clawtrim: {CostOfServices.PriceForTrim}kr");
             }
-            if (pet.needsWash)
+            if (pet.NeedsWash)
             {
                 totalPrice += CostOfServices.PriceForWash;
                 Console.WriteLine($"Wash: {CostOfServices.PriceForWash}kr");

@@ -9,11 +9,12 @@ namespace Inlamningsuppgift1_CodePattern_DanArv.Models
 {
     public class ManagePet : IManagePet
     {
-        private readonly IPet _pet;
 
-        public ManagePet(IPet pet)
+        private readonly Pet.Factory _petFactory;
+
+        public ManagePet(Pet.Factory petFactory)
         {
-            _pet = pet;
+            _petFactory = petFactory;
         }
 
         public IPet CreatePet(List<ICustomer> owners)
@@ -22,19 +23,19 @@ namespace Inlamningsuppgift1_CodePattern_DanArv.Models
             while (programIsRunning)
             {
                 Console.WriteLine("Enter pets name");
-                _pet.Name = Console.ReadLine();
-                if (!String.IsNullOrEmpty(_pet.Name))
+                string petName = Console.ReadLine();
+                if (!String.IsNullOrEmpty(petName))
                 {
                     Console.WriteLine("Enter owners name");
                     string userInput = Console.ReadLine();
 
                     ICustomer customer = owners.FirstOrDefault(name => name.Name == userInput);
-                    if(owners != null)
+                    if(customer != null)
                     {
-                        _pet.Owner = customer;
+                        ICustomer customerName = customer;
                         Console.WriteLine("Pet added.");
                         programIsRunning = false;
-                        return _pet;
+                        return _petFactory(petName, customerName, false, false, false);
                     }
                     else
                     {
@@ -51,9 +52,9 @@ namespace Inlamningsuppgift1_CodePattern_DanArv.Models
 
         public void SeeAllPets(List<IPet> pets)
         {
-            foreach (var _pet in pets)
+            foreach (var pet in pets)
             {
-                Console.WriteLine($"Name: {_pet.Name}, Atkennel: {_pet.inKennel}");
+                Console.WriteLine($"Name: {pet.Name}, Atkennel: {pet.InKennel}");
             }
         }
     }
